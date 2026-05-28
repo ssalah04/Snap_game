@@ -12,6 +12,11 @@ public class Main {
         System.out.println(game.getDeck().size());
         game.sortDeckInNumberOrder();
         System.out.println(game.getDeck());
+        game.shuffleDeck();
+
+        System.out.println("SHUFFLED:");
+        System.out.println(game.getDeck());
+
 
     }
 }
