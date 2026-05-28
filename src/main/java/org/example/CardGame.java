@@ -35,6 +35,21 @@ public class CardGame {
        deckOfCards.sort((a, b) -> a.getValue() - b.getValue());
         return deckOfCards;
     }
+    public ArrayList<Card> sortDeckIntoSuits() {
+
+        deckOfCards.sort((a, b) -> {
+
+            int suitCompare = a.getSuit().compareTo(b.getSuit());
+
+            if (suitCompare == 0) {
+                return a.getValue() - b.getValue();
+            }
+
+            return suitCompare;
+        });
+
+        return deckOfCards;
+    }
 }
 //dealCard Takes the card from the top of the deck and returns it.
 //ArrayList<Card> sortDeckInNumberOrder()
