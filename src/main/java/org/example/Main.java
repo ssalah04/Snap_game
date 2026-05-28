@@ -9,6 +9,7 @@ public class Main {
         System.out.println(game.getDeck().size());
         System.out.println(game.getDeck());
         System.out.println(game.dealCard());
+        System.out.println(game.getDeck().size());
 
     }
 }
