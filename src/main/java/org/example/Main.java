@@ -7,6 +7,7 @@ public class Main {
         CardGame game = new CardGame("Test");
 
         System.out.println(game.getDeck().size());
+        System.out.println(game.getDeck());
 
     }
 }
