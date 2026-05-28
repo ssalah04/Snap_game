@@ -1,5 +1,6 @@
 package org.example;
 import java.util.ArrayList;
+
 public class CardGame {
     public ArrayList<Card> deckOfCards;
     public String name;
@@ -48,6 +49,10 @@ public class CardGame {
             return suitCompare;
         });
 
+        return deckOfCards;
+    }
+    public ArrayList<Card> shuffleDeck() {
+        Collections.shuffle(deckOfCards);
         return deckOfCards;
     }
 }
