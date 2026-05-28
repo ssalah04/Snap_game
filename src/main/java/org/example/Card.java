@@ -25,7 +25,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return symbol + suit + " (Value: " + value + ")";
+        return symbol + suit;
     }
 }
 //Has a String suit. Use the Unicode characters of heart, club, diamond and spade.
