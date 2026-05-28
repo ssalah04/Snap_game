@@ -10,6 +10,8 @@ public class Main {
         System.out.println(game.getDeck());
         System.out.println(game.dealCard());
         System.out.println(game.getDeck().size());
+        game.sortDeckInNumberOrder();
+        System.out.println(game.getDeck());
 
     }
 }
