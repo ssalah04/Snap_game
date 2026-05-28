@@ -25,9 +25,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return symbol + suit;
-    }
-    public String dealCard(){
         return symbol + suit + " (Value: " + value + ")";
     }
 }
