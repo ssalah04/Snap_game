@@ -2,8 +2,10 @@ package org.example;
 import java.util.ArrayList;
 public class CardGame {
     public ArrayList<Card> deckOfCards;
+    private String name;
 
     public CardGame(ArrayList<Card> deckOfCards) {
+
         this.deckOfCards = deckOfCards;
     }
 
