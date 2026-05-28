@@ -16,7 +16,12 @@ public class Main {
 
         System.out.println("SHUFFLED:");
         System.out.println(game.getDeck());
+        game.sortDeckIntoSuits();
+
+        System.out.println("\nSORTED INTO SUITS:");
+        System.out.println(game.getDeck());
+    }
 
 
     }
-}
+
