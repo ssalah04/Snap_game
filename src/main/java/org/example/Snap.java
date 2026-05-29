@@ -36,33 +36,35 @@ public class Snap extends CardGame {
         Card lastTurnCard = null;
         int turn = 0;
 
-            while (!getDeck().isEmpty()) {     //Important: while(true) creates NullPointerException. Remember to change it to !getDeck().isEmpty().
-                Player activePlayer;
-                if (turn % 2 == 0) {
-                    activePlayer = playerOne;
-                } else {
-                    activePlayer = playerTwo;
-                }
-
-                System.out.println(activePlayer.getName() + ", press enter to deal a card");
-                scanner.nextLine();
-
-                Card activeCard = dealCard();
-
-                System.out.println("Card dealt: " + activeCard);
-
-                if (lastTurnCard != null && activeCard.getSymbol().equals(lastTurnCard.getSymbol())) {
-                    System.out.println("SNAP! Type 'snap' within 2 seconds!");
-                    if (attemptSnap(scanner)) {
-                        System.out.println("SNAP! Congratulations, " + activePlayer.getName() + " wins!");
-                    }
-                    else {
-                        System.out.println("Sorry "+ activePlayer.getName() + ", that was too slow! Would you like to try again");
-                    }
-                    break;
-                }
-                lastTurnCard = activeCard;
-                turn++;
+        while (!getDeck().isEmpty()) {              //Important: while(true) creates NullPointerException. Remember to change it to !getDeck().isEmpty().
+            Player activePlayer;
+            if (turn % 2 == 0) {
+                activePlayer = playerOne;
+            } else {
+                activePlayer = playerTwo;
             }
+
+            System.out.println(activePlayer.getName() + ", press enter to deal a card");
+            scanner.nextLine();
+
+            Card activeCard = dealCard();
+
+            System.out.println("Card dealt: " + activeCard);
+
+            if (lastTurnCard != null && activeCard.getSymbol().equals(lastTurnCard.getSymbol())) {
+                System.out.println("SNAP! Type 'snap' within 2 seconds!");
+                if (attemptSnap(scanner)) {
+                    System.out.println("SNAP! Congratulations, " + activePlayer.getName() + " wins!");
+                } else {
+                    System.out.println("Sorry " + activePlayer.getName() + ", that was too slow!");
+                }
+                break;
+            }
+            lastTurnCard = activeCard;
+            turn++;
+
         }
+        System.out.println("No SNAP, Game Over!");
+    }
+
     }
