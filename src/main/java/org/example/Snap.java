@@ -36,7 +36,7 @@ public class Snap extends CardGame {
         Card lastCard = null;
         int turn = 0;
 
-            while (true) {
+            while (!getDeck().isEmpty()) {
                 Player activePlayer;
                 if (turn % 2 == 0) {
                     activePlayer = playerOne;
