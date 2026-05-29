@@ -4,15 +4,17 @@ public class Snap extends CardGame {
     public Snap(String name) {
         super(name);
     }
-
+    public Player createPlayer( Scanner scanner,String message) {
+        System.out.println(message);
+        String name = scanner.nextLine();
+        return new Player(name);
+    }
     public void start() {
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Player 1 name:");
-        String playerOneName = scanner.nextLine();
-        System.out.println("Enter Player 2 name:");
-        String playerTwoName = scanner.nextLine();
-        Player playerOne = new Player(playerOneName);
-        Player playerTwo = new Player(playerTwoName);
+
+        Player playerOne = createPlayer(scanner, "Enter Player 1 name:");
+        Player playerTwo = createPlayer(scanner, "Enter Player 2 name:");
 
         shuffleDeck();
 
