@@ -25,6 +25,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return symbol + suit;
+        return symbol + suit.getSymbol();
     }
 }

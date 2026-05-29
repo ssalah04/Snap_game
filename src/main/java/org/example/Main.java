@@ -4,22 +4,6 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
-//        CardGame game = new CardGame("Test");
-//
-//        System.out.println(game.getDeck().size());
-//        System.out.println(game.getDeck());
-//        System.out.println(game.dealCard());
-//        System.out.println(game.getDeck().size());
-//        game.sortDeckInNumberOrder();
-//        System.out.println(game.getDeck());
-//        game.shuffleDeck();
-//
-//        System.out.println("SHUFFLED:");
-//        System.out.println(game.getDeck());
-//        game.sortDeckIntoSuits();
-//
-//        System.out.println("\nSORTED INTO SUITS:");
-//        System.out.println(game.getDeck());
         Snap snap = new Snap("Snap");
         snap.startGame();
     }
