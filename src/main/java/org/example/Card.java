@@ -1,11 +1,11 @@
 package org.example;
 
 public class Card {
-    public String suit;
+    public Suit suit;;
     public String symbol;
     public int value;
 
-    public Card(String suit, String symbol,int value) {
+    public Card(Suit suit, String symbol,int value) {
         this.suit = suit;
         this.symbol = symbol;
         this.value = value;
@@ -19,7 +19,7 @@ public class Card {
         return symbol;
     }
 
-    public String getSuit() {
+    public Suit getSuit() {
         return suit;
     }
 
