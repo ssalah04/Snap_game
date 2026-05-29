@@ -20,7 +20,8 @@ public class Main {
 
         System.out.println("\nSORTED INTO SUITS:");
         System.out.println(game.getDeck());
-
+        Snap snap = new Snap("Snap");
+        snap.start();
     }
     }
 
