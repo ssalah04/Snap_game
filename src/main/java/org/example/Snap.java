@@ -24,7 +24,7 @@ public class Snap extends CardGame {
            return false;
        }
     }
-    public void start() {
+    public void startGame() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -33,10 +33,10 @@ public class Snap extends CardGame {
 
         shuffleDeck();
 
-        Card lastCard = null;
+        Card lastTurnCard = null;
         int turn = 0;
 
-            while (!getDeck().isEmpty()) {
+            while (!getDeck().isEmpty()) {     //Important: while(true) creates NullPointerException. Remember to change it to !getDeck().isEmpty().
                 Player activePlayer;
                 if (turn % 2 == 0) {
                     activePlayer = playerOne;
@@ -51,17 +51,17 @@ public class Snap extends CardGame {
 
                 System.out.println("Card dealt: " + activeCard);
 
-                if (lastCard != null && activeCard.getSymbol().equals(lastCard.getSymbol())) {
+                if (lastTurnCard != null && activeCard.getSymbol().equals(lastTurnCard.getSymbol())) {
                     System.out.println("SNAP! Type 'snap' within 2 seconds!");
                     if (attemptSnap(scanner)) {
                         System.out.println("SNAP! Congratulations, " + activePlayer.getName() + " wins!");
                     }
                     else {
-                        System.out.println("Sorry, "+ activePlayer.getName() + " was too slow!");
+                        System.out.println("Sorry "+ activePlayer.getName() + ", that was too slow! Would you like to try again");
                     }
                     break;
                 }
-                lastCard = activeCard;
+                lastTurnCard = activeCard;
                 turn++;
             }
         }
