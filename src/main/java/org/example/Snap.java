@@ -35,8 +35,9 @@ public class Snap extends CardGame {
 
         Card lastTurnCard = null;
         int turn = 0;
+        boolean gameWon = false;
 
-        while (!getDeck().isEmpty()) {              //Important: while(true) creates NullPointerException. Remember to change it to !getDeck().isEmpty().
+        while (!getDeck().isEmpty()) {
             Player activePlayer;
             if (turn % 2 == 0) {
                 activePlayer = playerOne;
@@ -55,6 +56,7 @@ public class Snap extends CardGame {
                 System.out.println("SNAP! Type 'snap' within 2 seconds!");
                 if (attemptSnap(scanner)) {
                     System.out.println("SNAP! Congratulations, " + activePlayer.getName() + " wins!");
+                    gameWon = true;
                 } else {
                     System.out.println("Sorry " + activePlayer.getName() + ", that was too slow!");
                 }
@@ -64,7 +66,9 @@ public class Snap extends CardGame {
             turn++;
 
         }
-        System.out.println("No SNAP, Game Over!");
+        if (!gameWon) {
+            System.out.println("No SNAP, Game Over!");
+        }
     }
 
     }
