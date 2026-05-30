@@ -38,12 +38,8 @@ public class Snap extends CardGame {
         boolean gameWon = false;
 
         while (!getDeck().isEmpty()) {
-            Player activePlayer;
-            if (turn % 2 == 0) {
-                activePlayer = playerOne;
-            } else {
-                activePlayer = playerTwo;
-            }
+            Player activePlayer =
+                    (turn % 2 == 0) ? playerOne : playerTwo;
 
             System.out.println(activePlayer.getName() + ", press enter to deal a card");
             scanner.nextLine();
