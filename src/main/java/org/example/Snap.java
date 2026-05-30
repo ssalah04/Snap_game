@@ -65,6 +65,8 @@ public class Snap extends CardGame {
         if (!gameWon) {
             System.out.println("No SNAP, Game Over!");
         }
+        scanner.close();
     }
+    
 
     }
