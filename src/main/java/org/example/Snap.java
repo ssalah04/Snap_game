@@ -24,6 +24,11 @@ public class Snap extends CardGame {
            return false;
        }
     }
+
+    private boolean isSnap(Card lastTurnCard, Card activeCard) {
+        return lastTurnCard != null
+                && activeCard.getSymbol().equals(lastTurnCard.getSymbol());
+    }
     public void startGame() {
 
         Scanner scanner = new Scanner(System.in);
@@ -48,7 +53,7 @@ public class Snap extends CardGame {
 
             System.out.println("Card dealt: " + activeCard);
 
-            if (lastTurnCard != null && activeCard.getSymbol().equals(lastTurnCard.getSymbol())) {
+            if (isSnap(lastTurnCard,activeCard)) {
                 System.out.println("SNAP! Type 'snap' within 2 seconds!");
                 if (attemptSnap(scanner)) {
                     System.out.println("SNAP! Congratulations, " + activePlayer.getName() + " wins!");
